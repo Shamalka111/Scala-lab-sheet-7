@@ -1,7 +1,7 @@
 
 case class Rational(numer:Int, denomi:Int) {
 
-    require(denomi>0, println("Denominator must be greater than 0"))    //avoid 0 denominator
+    require(denomi!=0, println("Denominator should not be equal to 0"))    //avoid 0 denominator
 
     def add(r:Rational) = Rational(this.numer*r.denomi + this.denomi*r.numer, this.denomi*r.denomi)
 

@@ -5,12 +5,9 @@ case class Rational(numer:Int, denomi:Int) {
 
    def neg() ={
         
-        if(this.numer>0 && this.denomi<0){
+        if(this.denomi<0){
             Rational(this.numer,-this.denomi)
-
-        }else if(this.numer<0 && this.denomi<0){
-            Rational(this.numer,-this.denomi)
-
+            
         }else{
             Rational(-this.numer,this.denomi)
         }

@@ -5,9 +5,22 @@ case class Rational(numer:Int, denomi:Int) {
 
     def add(r:Rational) = Rational(this.numer*r.denomi + this.denomi*r.numer, this.denomi*r.denomi)
 
-    def neg = Rational(-this.numer, this.denomi)
+    def neg() ={
+        
+        if(this.numer>0 && this.denomi<0){
+            Rational(this.numer,-this.denomi)
 
-    def -(r:Rational)= this.add(r.neg)            //do negation and adding
+        }else if(this.numer<0 && this.denomi<0){
+            Rational(this.numer,-this.denomi)
+
+        }else{
+            Rational(-this.numer,this.denomi)
+        }
+        
+    }
+
+
+    def -(r:Rational)= this.add(r.neg())            //do negation and adding
 
     override def toString(): String = numer + "/" + denomi
 }
